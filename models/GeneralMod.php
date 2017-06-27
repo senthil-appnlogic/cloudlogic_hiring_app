@@ -269,5 +269,27 @@
 				return $result;
 			}
 		}
+
+		public function addCandidateDetails($values){
+			$data = array(
+			   'FIRSTNAME' => $values['name'],
+			   'EMAIL' => $values['email'],
+			   'DOB' => $values['phone']
+			);
+			$this->db->insert('profile', $data); 
+			$profile_id= $this->db->insert_id();
+			if(!empty($profile_id)){
+				$data1 = array(
+					'USER_PROFILE_ID' => $profile_id,
+					'USER_FIRST_NAME' => $values['name'],
+					'USER_PHONE' => $values['phone'],
+					'USER_EMAIL' => $values['email'],
+					'USER_PASSWORD' => $values['pass'],
+				);
+				$this->db->insert('user', $data1);
+				$user_id= $this->db->insert_id();
+				return array(['profile_id' => $profile_id,'USER_ID'=> $user_id]);
+			}
+		}
 	}
 ?>

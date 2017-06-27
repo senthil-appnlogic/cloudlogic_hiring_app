@@ -78,7 +78,7 @@ $db['default'] = array(
 	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => '',
-    'database' => 'rubycampus_new',
+    'database' => 'hiring_app',
 	
 	// 'hostname' => 'localhost',
 	// 'username' => 'campusen_DBadmin',

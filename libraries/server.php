@@ -9,7 +9,7 @@ ini_set('display_errors',1);error_reporting(E_ALL);
 
 function loadServer($loadData){
 // Localhost
-$dsn      = 'mysql:dbname=rubycampus_new;host=localhost';
+$dsn      = 'mysql:dbname=hiring_app;host=localhost';
 $username = 'root';
 $password = '';
 
